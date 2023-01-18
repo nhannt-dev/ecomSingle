@@ -1,0 +1,36 @@
+- category
++ id (not null, increment)
++ name (string)
++ sub category count (integer)
++ category product count (integer)
++ slug (string)
+
+-sub category
++ id (not null, increment)
++ name (string)
++ category id
++ category name
++ product count (integer)
++ slug (string)
+
+- products
++ id (not null, increment)
++ name
++ short description
++ long description
++ price
++ category name
++ sub category name
++ count
++ img
++ slug (string)
+
+- order
++ id
++ product id
++ product name
++ product price
++ quantity
++ total price
++ status
++ submission date

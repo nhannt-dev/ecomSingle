@@ -12,7 +12,8 @@
         "laratrust-setup": "php artisan laratrust:setup",
         "autoload": "composer dump-autoload",
         "laratrust-seeder": "php artisan laratrust:seeder",
-        "controller": "php artisan make:controller Admin/OrderController"
+        "controller": "php artisan make:controller <File name>Controller",
+        "model": "php artisan make:model Product -m"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.2",
