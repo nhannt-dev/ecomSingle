@@ -27,16 +27,22 @@
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
+          @foreach ($products as $product)
             <tr>
-              <td>1</td>
-              <td>Samsung Galaxy A13</td>
-              <td></td>
-              <td>100</td>
+              <td>{{ $product->id }}</td>
+              <td>{{ $product->product_name }}</td>
               <td>
-                  <a href="" class="btn btn-warning">Edit</a>
-                  <a href="" class="btn btn-danger">Delete</a>
+                <a href="{{ route('editproductimg', $product->id) }}">
+                  <img style="height: 100px;" src="{{ asset($product->product_img) }}" alt="{{ $product->product_name }}">
+                </a>
+              </td>
+              <td>{{ $product->price }}</td>
+              <td>
+                  <a href="{{ route('editproduct', $product->id) }}" class="btn btn-warning">Edit</a>
+                  <a href="{{ route('deleteproduct', $product->id) }}" class="btn btn-danger">Delete</a>
               </td>
             </tr>
+          @endforeach
           </tbody>
         </table>
       </div>
