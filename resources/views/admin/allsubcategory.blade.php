@@ -8,6 +8,11 @@
         <span class="text-muted fw-light">Page/</span> 
         All Sub Category
     </h4>
+    @if (session()-> has('message'))
+      <div class="alert alert-success">
+        {{ session()->get('message') }}
+      </div>
+    @endif
     <div class="card">
       <h5 class="card-header">Sub Category Information</h5>
       <div class="table-responsive text-nowrap">
@@ -16,22 +21,26 @@
             <tr>
               <th>Id</th>
               <th>Sub Category Name</th>
+              <th>Slug</th>
               <th>Category</th>
               <th>Product</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
-            <tr>
-              <td>1</td>
-              <td>Samsung</td>
-              <td>Phone</td>
-              <td>100</td>
-              <td>
-                  <a href="" class="btn btn-warning">Edit</a>
-                  <a href="" class="btn btn-danger">Delete</a>
-              </td>
-            </tr>
+            @foreach ($allsubcategories as $allsubcategory)
+              <tr>
+                <td>{{ $allsubcategory->id }}</td>
+                <td>{{ $allsubcategory->subcategory_name}}</td>
+                <td>{{ $allsubcategory->slug}}</td>
+                <td>{{ $allsubcategory->category_name }}</td>
+                <td>{{ $allsubcategory->product_count }}</td>
+                <td>
+                    <a href="{{ route('editsubcategory', $allsubcategory->id) }}" class="btn btn-warning">Edit</a>
+                    <a href="{{ route('deletesubcategory', $allsubcategory->id) }}" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
