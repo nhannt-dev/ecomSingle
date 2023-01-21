@@ -1,3 +1,5 @@
 http://localhost/phpmyadmin/index.php?route=/database/structure&db=ecomsingle
 
 http://127.0.0.1:8000/admin/dashboard
+
+http://127.0.0.1:8000
