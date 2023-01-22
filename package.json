@@ -12,7 +12,7 @@
         "laratrust-setup": "php artisan laratrust:setup",
         "autoload": "composer dump-autoload",
         "laratrust-seeder": "php artisan laratrust:seeder",
-        "controller": "php artisan make:controller User/HomeController",
+        "controller": "php artisan make:controller User/ClientController",
         "model": "php artisan make:model <File name> -m"
     },
     "devDependencies": {

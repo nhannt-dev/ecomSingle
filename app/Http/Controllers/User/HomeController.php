@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function Index()
     {
-        return view('user.layouts.template');
+        return view('user.home');
     }
 }
