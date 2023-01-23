@@ -51,7 +51,7 @@
                      <div class="custom_menu">
                         <ul>
                            <li><a href="{{ route('home') }}">Best Sellers</a></li>
-                           <li><a href="{{ route('category') }}">Category</a></li>
+                           <li><a href="#">Category</a></li>
                            <li><a href="{{ route('newrelease') }}">New Releases</a></li>
                            <li><a href="{{ route('todaydeal') }}">Today's Deals</a></li>
                            <li><a href="{{ route('customerservice') }}">Customer Service</a></li>
@@ -81,7 +81,7 @@
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <a href="index.html">Home</a>
                      @foreach ($categories as $category)
-                        <a href="fashion.html">{{ $category->category_name }}</a>
+                        <a href="{{ route('category', [$category->id, $category->slug]) }}">{{ $category->category_name }}</a>
                      @endforeach
                   </div>
                   <span class="toggle_icon" onclick="openNav()"><img src="{{ asset('home/images/toggle-icon.png') }}"></span>
@@ -90,7 +90,7 @@
                      </button>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         @foreach ($categories as $category)
-                           <a class="dropdown-item" href="#">{{ $category->category_name }}</a>
+                           <a class="dropdown-item" href="{{ route('category', [$category->id, $category->slug]) }}">{{ $category->category_name }}</a>
                         @endforeach
                      </div>
                   </div>
@@ -151,7 +151,7 @@
             <div class="footer_menu">
                <ul>
                   <li><a href="{{ route('home') }}">Best Sellers</a></li>
-                  <li><a href="{{ route('category') }}">Category</a></li>
+                  <li><a href="#">Category</a></li>
                   <li><a href="{{ route('newrelease') }}">New Releases</a></li>
                   <li><a href="{{ route('todaydeal') }}">Today's Deals</a></li>
                   <li><a href="{{ route('customerservice') }}">Customer Service</a></li>
